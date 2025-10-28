@@ -42,11 +42,11 @@
         <!-- BrowserActivity -->
         <activity
     android:name=".activities.BrowserActivity"
-    android:label="@string/FOSS-Minimal">
+    android:label="@string/app_name">
 
 </activity><activity
     android:name=".activities.BrowserActivity"
-    android:label="@string/Foss-Minimal"
+    android:label="@string/app_name"
     android:exported="true">
 
     <!-- This block removed so app won't appear in launcher -->
