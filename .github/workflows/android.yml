@@ -1,12 +1,9 @@
 name: Android CI
-
 on:
   push:
-    branches:
-      - '*'
+    branches: [ feature/headless-video-block ]
   pull_request:
-    branches:
-      - '*'
+    branches: [ feature/headless-video-block ]
   workflow_dispatch:
 
 jobs:
