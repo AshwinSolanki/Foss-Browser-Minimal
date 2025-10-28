@@ -41,65 +41,69 @@
 
         <!-- BrowserActivity -->
         <activity
-            android:name="de.baumann.browser.activity.BrowserActivity"
-            android:configChanges="orientation|uiMode|screenSize|smallestScreenSize|screenLayout"
-            android:exported="true"
-            android:grantUriPermissions="true"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme">
+    android:name=".activities.BrowserActivity"
+    android:label="@string/FOSS-Minimal">
 
-            <intent-filter
-                android:icon="@mipmap/ic_launcher"
-                android:label="@string/search_hint">
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
+</activity><activity
+    android:name=".activities.BrowserActivity"
+    android:label="@string/app_name"
+    android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
-            </intent-filter>
+    <!-- This block removed so app won't appear in launcher -->
+    <!--
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+    -->
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.WEB_SEARCH" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+    <!-- Opens web links -->
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <action android:name="android.intent.action.WEB_SEARCH" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="http" />
+        <data android:scheme="https" />
+    </intent-filter>
 
-            <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
+    <!-- Handles shared text/links -->
+    <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+    </intent-filter>
 
-            <intent-filter>
-                <action android:name="postLink" />
-            </intent-filter>
+</activity>"
+    android:exported="true">
 
-            <meta-data
-                android:name="android.webkit.WebView.MetricsOptOut"
-                android:value="true" />
+    <!-- This block removed so app won't appear in launcher -->
+    <!--
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+    -->
 
-        </activity>
+    <!-- Opens web links -->
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <action android:name="android.intent.action.WEB_SEARCH" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="http" />
+        <data android:scheme="https" />
+    </intent-filter>
 
-        <activity
-            android:name=".ShareActivity"
-            android:label="@string/dialog_postOnWebsite"
-            android:theme="@android:style/Theme.NoDisplay"
-            android:exported="true">
+    <!-- Handles shared text/links -->
+    <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+    </intent-filter>
 
-            <intent-filter android:icon="@mipmap/ic_launcher">
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
-
+</activity>
+           
         <!-- Settings -->
         <activity
             android:name="de.baumann.browser.activity.Settings_Activity"
